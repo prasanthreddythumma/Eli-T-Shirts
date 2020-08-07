@@ -71,7 +71,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="$40.99"
-                                android:textColor="#4CAF50"
+                                android:textColor="@color/green_light"
                                 android:textSize="12dp" />
                         </LinearLayout>
 
@@ -141,7 +141,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="$35.99"
-                                android:textColor="#4CAF50"
+                                android:textColor="@color/green_light"
                                 android:textSize="12dp" />
                         </LinearLayout>
 
@@ -211,7 +211,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="$45.99"
-                                android:textColor="#4CAF50"
+                                android:textColor="@color/green_light"
                                 android:textSize="12dp" />
                         </LinearLayout>
 
@@ -281,7 +281,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="$45.99"
-                                android:textColor="#4CAF50"
+                                android:textColor="@color/green_light"
                                 android:textSize="12dp" />
                         </LinearLayout>
 
@@ -351,7 +351,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="$45.99"
-                                android:textColor="#4CAF50"
+                                android:textColor="@color/green_light"
                                 android:textSize="12dp" />
                         </LinearLayout>
 
@@ -421,7 +421,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="$45.99"
-                                android:textColor="#4CAF50"
+                                android:textColor="@color/green_light"
                                 android:textSize="12dp" />
                         </LinearLayout>
 

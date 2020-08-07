@@ -27,7 +27,7 @@
         android:layout_marginRight="20dp"
         android:gravity="center"
         android:text="Your Cart is empty !"
-        android:textColor="#848484"
+        android:textColor="@color/colorPrimary"
         android:textSize="15sp" />
 
     <Button

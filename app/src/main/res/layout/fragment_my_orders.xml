@@ -44,7 +44,7 @@
                         android:layout_height="wrap_content"
                         android:text="$ 45.99"
                         android:textSize="12dp"
-                        android:textColor="#4CAF50"/>
+                        android:textColor="@color/green_light"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -83,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:text="$ 45.99"
                         android:textSize="12dp"
-                        android:textColor="#4CAF50"/>
+                        android:textColor="@color/green_light"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -121,7 +121,7 @@
                         android:layout_height="wrap_content"
                         android:text="$ 45.99"
                         android:textSize="12dp"
-                        android:textColor="#4CAF50"/>
+                        android:textColor="@color/green_light"/>
                 </LinearLayout>
 
             </LinearLayout>
