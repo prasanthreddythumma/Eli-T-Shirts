@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_item1"
+            android:title="T-Shirts" />
+        <item
+            android:id="@+id/nav_item2"
+            android:title="Polo Shirts" />
+        <item
+            android:id="@+id/nav_item3"
+            android:title="Formal Shirts" />
+        <item
+            android:id="@+id/nav_item4"
+            android:title="Casual Shirts" />
+        <item
+            android:id="@+id/nav_item5"
+            android:title="Hoodies" />
+        <item
+            android:id="@+id/nav_item6"
+            android:title="Others" />
+    </group>
+
+    <item android:title="My Profile">
+        <menu>
+            <item
+                android:id="@+id/my_orders"
+                android:title="My Orders" />
+            <item
+                android:id="@+id/my_cart"
+                android:title="My Cart" />
+            <item
+                android:id="@+id/my_wishlist"
+                android:title="My Wishlist" />
+            <item
+                android:id="@+id/my_account"
+                android:title="My Account" />
+        </menu>
+    </item>
+</menu>
