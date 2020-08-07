@@ -33,10 +33,26 @@ public class OthersFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        cardView1 = view.findViewById(R.id.cardview);
+        cardView2 = view.findViewById(R.id.cardview2);
+        cardView3 = view.findViewById(R.id.cardview3);
+        cardView4 = view.findViewById(R.id.cardview1);
+        cardView5 = view.findViewById(R.id.cardview4);
+        cardView6 = view.findViewById(R.id.cardview5);
 
+        cardView1.setOnClickListener(this);
+        cardView2.setOnClickListener(this);
+        cardView3.setOnClickListener(this);
+        cardView4.setOnClickListener(this);
+        cardView5.setOnClickListener(this);
+        cardView6.setOnClickListener(this);
     }
     @Override
     public void onClick(View view) {
+        int id = view.getId();
 
+        if(id == R.id.cardview ||id == R.id.cardview1||id == R.id.cardview2||id == R.id.cardview3||id == R.id.cardview4||id == R.id.cardview5){
+            startActivity(new Intent(getActivity(), ItemDetailsActivity.class));
+        }
     }
 }
