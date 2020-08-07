@@ -22,7 +22,7 @@
             android:title="Others" />
     </group>
 
-    <item android:title="My Profile">
+    <item android:title="MY PROFILE">
         <menu>
             <item
                 android:id="@+id/my_orders"
