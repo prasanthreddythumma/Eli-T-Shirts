@@ -18,11 +18,12 @@
                 android:padding="@dimen/activity_horizontal_margin"
                 android:orientation="horizontal"
                 android:weightSum="3">
-                <ImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                <ImageView
                     android:id="@+id/image_wishlist"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
+                    android:src="@drawable/cimg1"
                     android:layout_gravity="center_vertical"/>
                 <LinearLayout  android:id="@+id/layout_item_desc"
                     android:layout_width="0dp"
@@ -56,9 +57,11 @@
                 android:orientation="horizontal"
                 android:weightSum="3">
                 <ImageView
-                    android:id="@+id/image_wishlist1" android:layout_width="0dp"
+                    android:id="@+id/image_wishlist1"
+                    android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
+                    android:src="@drawable/timg1"
                     android:layout_gravity="center_vertical"
                     />
                 <LinearLayout  android:id="@+id/layout_item_desc1"
@@ -96,6 +99,7 @@
                     android:id="@+id/image_wishlist3" android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="1"
+                    android:src="@drawable/pimg4"
                     android:layout_gravity="center_vertical"
                     />
                 <LinearLayout  android:id="@+id/layout_item_desc3"
