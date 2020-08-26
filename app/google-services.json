@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "401042756841",
+    "firebase_url": "https://eli-t-shirts.firebaseio.com",
+    "project_id": "eli-t-shirts",
+    "storage_bucket": "eli-t-shirts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401042756841:android:de29c5143860285f8fcc78",
+        "android_client_info": {
+          "package_name": "com.example.eli_tshirts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401042756841-7ifrmvh6t5cr82sc8tu2g6m092g41h3o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1XSlUb7UVIpSmRXcbCP6_mEaVGD7nr_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401042756841-7ifrmvh6t5cr82sc8tu2g6m092g41h3o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
