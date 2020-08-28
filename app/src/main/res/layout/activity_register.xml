@@ -24,7 +24,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/firstName"
+            android:id="@+id/rFirstName"
             android:layout_weight="1"
             android:textColor="@color/gen_black"
             android:background="@drawable/edit_text_border"
@@ -36,7 +36,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/lastName"
+            android:id="@+id/rLastName"
             android:layout_weight="1"
             android:textColor="@color/gen_black"
             android:padding="@dimen/activity_horizontal_margin"
@@ -71,7 +71,7 @@
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/phoneNumber"
+        android:id="@+id/rPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/gen_black"
@@ -90,15 +90,15 @@
         android:text="Register"
         android:textColor="@color/gen_white" />
 
-    <Button
+    <TextView
         android:id="@+id/btnLogin2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/activity_horizontal_margin"
         android:layout_margin="@dimen/margin_small"
-        android:background="@drawable/button_style"
-        android:text="Login"
-        android:textColor="@color/gen_white" />
+        android:gravity="center"
+        android:text="Already a member? Login Here"
+        android:textColor="@color/gen_black" />
 
 
 </LinearLayout>
