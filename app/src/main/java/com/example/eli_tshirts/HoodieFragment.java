@@ -7,13 +7,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class HoodieFragment extends Fragment implements View.OnClickListener{
-    CardView cardView1,cardView2,cardView3,cardView4,cardView5, cardView6;
+import com.example.eli_tshirts.POJO.Items;
+
+import java.util.ArrayList;
+
+public class HoodieFragment extends Fragment {
+    private FirebaseFirestore db;
+    private RecycleAdapter adapter;
+    private RecyclerView recyclerView;
+    ArrayList<Items> itemsList;
+    Items items;
+
     public HoodieFragment() {
         // Required empty public constructor
     }
@@ -24,29 +34,37 @@ public class HoodieFragment extends Fragment implements View.OnClickListener{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_hoodie, container, false);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        cardView1 = view.findViewById(R.id.cardview);
-        cardView2 = view.findViewById(R.id.cardview2);
-        cardView3 = view.findViewById(R.id.cardview3);
-        cardView4 = view.findViewById(R.id.cardview1);
-        cardView5 = view.findViewById(R.id.cardview4);
-        cardView6 = view.findViewById(R.id.cardview5);
+    @Override
+    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+        for (DocumentSnapshot snapshot : task.getResult()) {
+            items = new Items(snapshot.getString("name"),
+                    snapshot.getString("description"),
+                    snapshot.getString("image"),
+                    snapshot.getDouble("price"),
+                    snapshot.getBoolean("favourite"));
+            items.setId(snapshot.getId());
+            itemsList.add(items);
 
-        cardView1.setOnClickListener(this);
-        cardView2.setOnClickListener(this);
-        cardView3.setOnClickListener(this);
-        cardView4.setOnClickListener(this);
-        cardView5.setOnClickListener(this);
-        cardView6.setOnClickListener(this);
-    }
+        }
+        String input = "Hoodies";
+        adapter = new RecycleAdapter(input,itemsList, getContext());
+        recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new RecycleAdapter.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(int position) {
+                Bundle b = new Bundle();
+                b.putParcelable("hoodie", itemsList.get(position));
+                b.putString("collection","Hoodies");
+                Intent intent = new Intent(getActivity().getApplicationContext(), ItemDetailsActivity.class);
+                intent.putExtras(b);
+                startActivity(intent);
+            }
     @Override
     public void onClick(View view) {
         int id = view.getId();
