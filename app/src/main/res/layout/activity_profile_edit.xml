@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/gen_white"
+    android:layout_height="match_parent"
+    tools:context=".ProfileEditActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:src="@drawable/logo_size"
+        android:inputType="textPersonName" />
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_action_user" />
+            <EditText
+                android:id="@+id/profileFirstName"
+                android:textStyle="bold"
+                android:textColor="@color/gen_black"
+                android:textSize="22sp"
+                android:hint="First Name"
+                android:background="@drawable/edit_text_border"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_action_user" />
+            <EditText
+                android:id="@+id/profileLastName"
+                android:textColor="@color/gen_black"
+                android:textStyle="bold"
+                android:hint="Last Name"
+                android:textSize="22sp"
+                android:background="@drawable/edit_text_border"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_action_email" />
+            <EditText
+                android:id="@+id/profileEmail"
+                android:textStyle="bold"
+                android:textColor="@color/gen_black"
+                android:hint="E-Mail"
+                android:inputType="textEmailAddress"
+                android:textSize="22sp"
+                android:background="@drawable/edit_text_border"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_action_phone"/>
+            <EditText
+                android:id="@+id/profilePhone"
+                android:textStyle="bold"
+                android:textColor="@color/gen_black"
+                android:hint="Phone Number"
+                android:textSize="22sp"
+                android:inputType="phone"
+                android:background="@drawable/edit_text_border"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/saveDetails"
+        android:textColor="@color/gen_white"
+        android:background="@drawable/button_style"
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:text="Save"/>
+</LinearLayout>
