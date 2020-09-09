@@ -53,6 +53,16 @@ public class WishListActivity extends AppCompatActivity {
                 recyclerView.setAdapter(adapter);
 
                 adapter.setOnItemClickListener(new RecycleAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(int position) {
+                        Bundle b = new Bundle();
+                        b.putParcelable("wish", itemsList.get(position));
+                        b.putString("collection","WishList");
+                        Intent intent = new Intent(getApplicationContext(), ItemDetailsActivity.class);
+                        intent.putExtras(b);
+                        startActivity(intent);
+
+                    }
 
                     @Override
                     public void onImageClick(int position, ImageView imageView) {
