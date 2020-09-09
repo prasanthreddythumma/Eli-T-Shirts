@@ -152,12 +152,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             password.requestFocus();
             return false;
         }
-        else if(!Validation.isValidPassword(rPassword)){
-            password.getText().clear();
-            password.setError("Password should contain 8 character with at least 1 uppercase, 1 lowercase, 1 number and 1 special character");
-            password.requestFocus();
-            return false;
-        }
+
         else if(TextUtils.isEmpty(rPhone)){
             phoneNumber.setError("Phone Number can't be blank");
             phoneNumber.requestFocus();
