@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     /**
      * onClick call for elements which is implementation of OnClickListener
-     * @param view: view parameter
+     * @param view : view parameter
      */
     @Override
     public void onClick(View view) {

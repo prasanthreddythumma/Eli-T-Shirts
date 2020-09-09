@@ -72,7 +72,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     /**
      * onClick call for elements which is implementation of OnClickListener
-     * @param view: view parameter
+     * @param view : view parameter
      */
     @Override
     public void onClick(View view) {

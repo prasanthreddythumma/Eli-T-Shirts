@@ -104,7 +104,7 @@ public class CartListActivity extends AppCompatActivity implements View.OnClickL
 
     /**
      * onClick call for elements which is implementation of OnClickListener
-     * @param view: view parameter
+     * @param view : view parameter
      */
     @Override
     public void onClick(View view) {

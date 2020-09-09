@@ -60,7 +60,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
     /**
      * click listener method
-     * @param listener: parameter for the source
+     * @param listener : parameter for the source
      */
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
@@ -131,7 +131,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.ViewHold
 
         /**
          * parameterised constructor
-         * @param itemView: where the data is displayed.
+         * @param itemView : where the data is displayed.
          */
         public ViewHolder(@NonNull final View itemView) {
             super(itemView);
