@@ -125,12 +125,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             password.setError("Password can't be blank");
             password.requestFocus();
             return false;
-        } else if (!Validation.isValidPassword(userPassword)) {
-            password.getText().clear();
-            password.setError("Password should contain 8 character with at least 1 uppercase, 1 lowercase, 1 number and 1 special character");
-            password.requestFocus();
-            return false;
-        } else {
+        }  else {
             return true;
         }
     }
