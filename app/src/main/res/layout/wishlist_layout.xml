@@ -22,7 +22,36 @@
             android:layout_weight="1.3"
             android:layout_gravity="center_vertical"
             />
-
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1.5"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin">
+            <TextView
+                android:id="@+id/itemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/itemDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"/>
+            <TextView
+                android:id="@+id/itemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textColor="#4CAF50"/>
+        </LinearLayout>
+        <ImageView android:id="@+id/itemDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/delete_black"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
 
