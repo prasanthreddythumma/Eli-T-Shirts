@@ -19,12 +19,20 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+/**
+ * Adds the items into the WishListActivity.
+ */
 public class WishListActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private RecycleAdapter adapter;
     private RecyclerView recyclerView;
     ArrayList<Items> itemsList;
     Items items;
+
+    /**
+     * This is where the activity starts.
+     * @param savedInstanceState : Bundle element.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +72,11 @@ public class WishListActivity extends AppCompatActivity {
 
                     }
 
+                    /**
+                     * Clickable image.
+                     * @param position : Position of the image
+                     * @param imageView : ImageView object.
+                     */
                     @Override
                     public void onImageClick(int position, ImageView imageView) {
                         db.collection("WishList").document(itemsList.get(position).getId()).delete();
@@ -71,6 +84,9 @@ public class WishListActivity extends AppCompatActivity {
                         finish();
                         startActivity(intent);
                         Toast.makeText(getApplicationContext(),"Deleted", Toast.LENGTH_LONG).show();
+
+
+
                     }
                 });
 

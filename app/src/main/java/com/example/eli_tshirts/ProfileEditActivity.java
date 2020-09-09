@@ -20,6 +20,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+/**
+ * Java Class for activity_profile_edit to edit and update user details
+ */
 public class ProfileEditActivity extends AppCompatActivity {
     EditText firstName, lastName, phone, email;
     String sFirstName, sLastName, sPhone, sEmail;
@@ -28,6 +31,10 @@ public class ProfileEditActivity extends AppCompatActivity {
     FirebaseFirestore db;
     Users users;
 
+    /**
+     * method is called on activity load
+     * @param savedInstanceState : parameter of type Bundle
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

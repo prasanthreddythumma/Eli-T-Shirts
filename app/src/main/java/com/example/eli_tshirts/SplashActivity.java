@@ -11,10 +11,17 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
+/**
+ * It will splash the application logo when the application has been run.
+ */
 public class SplashActivity extends AppCompatActivity implements Animation.AnimationListener{
     Animation animFadeIn;
     LinearLayout linearLayout;
 
+    /**
+     * Starts this method when the activity has been called.
+     * @param savedInstanceState : Bundle element.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,17 +52,28 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
 
     }
 
+    /**
+     * To ge back to the previous screen.
+     */
     @Override
     public void onBackPressed() {
         this.finish();
         super.onBackPressed();
     }
 
+    /**
+     * Notifies the start of the animation.
+     * @param animation : animation object.
+     */
     @Override
     public void onAnimationStart(Animation animation) {
         //under Implementation
     }
 
+    /**
+     * Notifies the end of the animation.
+     * @param animation : animation element.
+     */
     public void onAnimationEnd(Animation animation) {
         // Start Main Screen
         Intent i = new Intent(SplashActivity.this, LoginActivity.class);
@@ -63,6 +81,10 @@ public class SplashActivity extends AppCompatActivity implements Animation.Anima
         this.finish();
     }
 
+    /**
+     * Notifies the repetition of the animation.
+     * @param animation : animation object.
+     */
     @Override
     public void onAnimationRepeat(Animation animation) {
         //under Implementation
