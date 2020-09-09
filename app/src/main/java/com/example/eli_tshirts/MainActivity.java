@@ -22,12 +22,20 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This activity works the moment app runs.
+ */
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     DrawerLayout drawer;
     static ViewPager viewPager;
     static TabLayout tabLayout;
+
+    /**
+     * this is the method that works first when activity starts.
+     * @param savedInstanceState : Bundle element.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,21 +51,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        Bundle extras = getIntent().getExtras();
 
+        String recall;
+        if(extras == null || extras.isEmpty()){
+            recall ="";
+        }
+        else {
+            recall = extras.getString("fragment");
+        }
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container, new TShirtFragment());
+        if(recall.isEmpty())
+            fragmentTransaction.add(R.id.fragment_container, new TShirtFragment());
+        else if(recall.equals("CasualShirts"))
+            fragmentTransaction.replace(R.id.fragment_container,new CasualShirtFragment());
+        else if(recall.equals("TShirts"))
+            fragmentTransaction.replace(R.id.fragment_container,new TShirtFragment());
+        else if(recall.equals("FormalShirts"))
+            fragmentTransaction.replace(R.id.fragment_container,new FormalShirtFragment());
+        else if(recall.equals("Hoodies"))
+            fragmentTransaction.replace(R.id.fragment_container,new HoodieFragment());
+        else if(recall.equals("Others"))
+            fragmentTransaction.replace(R.id.fragment_container,new OthersFragment());
+        else if(recall.equals("Polo TShirts"))
+            fragmentTransaction.replace(R.id.fragment_container,new PoloShirtFragment());
+
         fragmentTransaction.commit();
 
 
     }
 
+    /**
+     * To resume the paused application
+     */
     @Override
     protected void onResume() {
         super.onResume();
         invalidateOptionsMenu();
     }
 
+    /**
+     * To get beck to the previous page.
+     */
     @Override
     public void onBackPressed() {
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -68,12 +104,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    /**
+     * To add the menu buttons.
+     * @param menu : menu elements.
+     * @return : returns true.
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
+    /**
+     * prepares the screen's standard options to be displayed.
+     * @param menu :menu element.
+     * @return : returns menu
+     */
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
 
@@ -83,6 +129,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onPrepareOptionsMenu(menu);
     }
 
+    /**
+     * handles the click events.
+     * @param item : passing the menu item.
+     * @return :if handles successfully then returns true, otherwise it returns the false.
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -99,8 +150,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
-    @SuppressWarnings("StatementWithEmptyBody")
+    /**
+     * called when an item in the navigation menu is selected.
+     * @param item the selected item.
+     * @return : True to display the item as the selected.
+     */
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         item.setCheckable(true);
@@ -144,28 +198,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.commit();
         }
         else if(item.getItemId()== R.id.my_cart){
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,new MyCartFragment());
-            fragmentTransaction.commit();
+            startActivity(new Intent(this,CartListActivity.class));
         }
         else if(item.getItemId()== R.id.my_account){
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,new MyProfileFragment());
-            fragmentTransaction.commit();
+            startActivity(new Intent(this,ProfileActivity.class));
         }
         else if(item.getItemId()== R.id.my_orders){
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,new MyOrdersFragment());
-            fragmentTransaction.commit();
+            startActivity(new Intent(this,OrdersActivity.class));
         }
         else if(item.getItemId()== R.id.my_wishlist){
-            fragmentManager = getSupportFragmentManager();
-            fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,new MyWishlistFragment());
-            fragmentTransaction.commit();
+            startActivity(new Intent(this,WishListActivity.class));
         }
         return true;
     }
