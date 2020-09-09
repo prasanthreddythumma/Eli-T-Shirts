@@ -34,7 +34,9 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * This java class is used to show the Polo Shirt Fragment page.
+ */
 public class PoloShirtFragment extends Fragment {
     private FirebaseFirestore db;
     private RecycleAdapter adapter;
@@ -42,16 +44,29 @@ public class PoloShirtFragment extends Fragment {
     ArrayList<Items> itemsList;
     Items items;
 
+    /**
+     * Non-parameter Constructor
+     */
     public PoloShirtFragment() {
         // Required empty public constructor
     }
 
-
+    /**
+     * Calls the initial creation of fragment
+     * @param savedInstanceState :parameter of type bundle
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * is an override method and used to inflate the polo shirts fragment
+     * @param inflater : inflates the respective fragment.
+     * @param container : special view that can contain other views.
+     * @param savedInstanceState : a bundle object
+     * @return : inflated screen
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -59,7 +74,11 @@ public class PoloShirtFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_polo_shirt, container, false);
     }
 
-
+    /**
+     *onViewCreated works when the moment view created
+     * @param view :  view element
+     * @param savedInstanceState :Used to pass the data between activities.
+     */
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -98,6 +117,11 @@ public class PoloShirtFragment extends Fragment {
                                 startActivity(intent);
                             }
 
+                            /**
+                             * image click functionality
+                             * @param imageView  gets the corresponding image view.
+                             * @param position Gets the position of that particular element in fireStore.
+                             */
                             @Override
                             public void onImageClick(int position, ImageView imageView ) {
 
